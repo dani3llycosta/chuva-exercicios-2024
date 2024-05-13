@@ -1,259 +1,635 @@
+@import 'variables';
+
 :host {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 14px;
-  color: #333;
+  font-family: $font-family-primary;
+  font-size: 1rem;
+  color: $primary-color;
   box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h3,
-h4,
-h5,
-h6 {
-  margin: 8px 0;
+#initialInfo {
+  display: flex;
+  justify-content: space-between;
 }
 
-h2 {
-  margin-top: 50px;
+#siteInfo {
+  margin-left: 24rem;
 }
 
-p {
+#p-siteInfo-title-one,
+#p-siteInfo-title-two,
+#p-siteInfo-title-three {
   margin: 0;
+  line-height: 1.3;
 }
 
-.spacer {
-  flex: 1;
+#p-siteInfo-title-one,
+#p-siteInfo-title-three {
+  font-size: 0.875rem;
+  font-weight: 450;
 }
 
-.toolbar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60px;
+#p-siteInfo-title-two {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#lang,
+#perfilNotific {
   display: flex;
   align-items: center;
-  background-color: #04345d;
-  color: white;
-  font-weight: 600;
-}
-
-.toolbar img {
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo {
-  height: 40px;
-  margin: 0 8px;
-}
-
-.toolbar #youtube-logo {
-  height: 40px;
-  margin: 0 16px;
-}
-
-.toolbar #twitter-logo:hover,
-.toolbar #youtube-logo:hover {
-  opacity: 0.8;
-}
-
-.content {
-  display: flex;
-  margin: 82px auto 32px;
-  padding: 0 16px;
-  max-width: 960px;
-  flex-direction: column;
-  align-items: center;
-}
-
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
-.card-container {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  margin-top: 16px;
 }
 
-.card {
-  all: unset;
-  border-radius: 4px;
-  border: 1px solid #eee;
-  background-color: #fafafa;
-  height: 40px;
-  width: 200px;
-  margin: 0 8px 16px;
-  padding: 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  line-height: 24px;
-}
-
-.card-container .card:not(:last-child) {
-  margin-right: 0;
-}
-
-.card.card-small {
-  height: 16px;
-  width: 168px;
-}
-
-.card-container .card:not(.highlight-card) {
+#idiomas {
+  background-color: transparent;
+  width: 7rem;
+  height: 2.5rem;
   cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: .1122rem rgba(0, 0, 0, 0.247) solid;
+  border-radius: 0.1722rem;
+  margin-left: 16rem;
 }
 
-.card-container .card:not(.highlight-card):hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+#perfilInfo {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: right;
+  margin: 1.3rem 0 0 2.5rem;
 }
 
-.card-container .card:not(.highlight-card):hover .material-icons path {
-  fill: rgb(105, 103, 103);
+.userInfo-profile,
+.userInfo-profile-welcome {
+  margin: 0;
+  line-height: 1.2;
 }
 
-.card.highlight-card {
-  background-color: #1976d2;
-  color: white;
-  font-weight: 600;
-  border: none;
-  width: auto;
-  min-width: 30%;
+.userInfo-profile-welcome {
+  font-size: 0.9823rem;
+}
+
+#fotoUsuario {
   position: relative;
+  height: 2.4rem;
+  margin-right: 4.7rem;
 }
 
-.card.card.highlight-card span {
-  margin-left: 60px;
-}
-
-svg#rocket {
-  width: 80px;
+#notific {
   position: absolute;
-  left: -10px;
-  top: -24px;
+  top: 1.3rem;
+  right: 0.500rem;
+  height: 0.875rem;
+  margin-right: 5rem;
 }
 
-svg#rocket-smoke {
-  height: calc(100vh - 95px);
-  position: absolute;
-  top: 10px;
-  right: 180px;
-  z-index: -10;
-}
-
-a,
-a:visited,
-a:hover {
-  color: #1976d2;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #125699;
-}
-
-.terminal {
-  position: relative;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 6px;
-  padding-top: 45px;
-  margin-top: 8px;
-  overflow: hidden;
-  background-color: rgb(15, 15, 16);
-}
-
-.terminal::before {
-  content: "\2022 \2022 \2022";
-  position: absolute;
+aside {
+  position: fixed;
   top: 0;
   left: 0;
-  height: 4px;
-  background: rgb(58, 58, 58);
-  color: #c2c3c4;
-  width: 100%;
-  font-size: 2rem;
-  line-height: 0;
-  padding: 14px 0;
-  text-indent: 4px;
+  background-color: $tertiary-color;
+  height: 100vh;
+  border-right: rgba(0, 0, 0, 0.178) 1px solid;
+  font-family: $font-family-secondary;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.terminal pre {
-  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-  color: white;
-  padding: 0 1rem 1rem;
-  margin: 0;
+aside h1 {
+  width: 21rem;
+  height: 3.5rem;
+  background: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
+  color: $tertiary-color;
+  text-align: center;
+  margin-top: 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+  padding: 1.3rem 0 1.5rem 0;
+  font-family: $font-family-primary;
+}
+
+aside img {
+  margin-left: 1.6rem;
+  height: 19rem;
+}
+
+.pageLinks {
+  color: $primary-color;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 1.4rem;
+  line-height: 2.5rem;
+}
+
+#apresentation,
+#comite,
+#author,
+#theme,
+#works,
+#contact {
+  border-top: 1px rgba(0, 0, 0, 0.123) solid;
+  border-bottom: 1px rgba(0, 0, 0, 0.116) solid;
+}
+
+#works {
+  background-color: $quartenary-color;
+  border-left: 0.6273rem transparent solid;
+  border-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
+  border-image-slice: 1;
+}
+
+.btnActions,
+.btnActions-download {
+  color: $tertiary-color;
+  border: 0.0652rem $secondary-color solid;
+  border-radius: 0.221rem;
+  background-color: $secondary-color;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.btnActions-download {
+  height: 2.1rem;
+  width: 8.5rem;
+  margin-right: 0.297rem;
+}
+
+#btnActions-doi {
+  outline: 0.0221rem solid $tertiary-color;
+  background-color: $tertiary-color;
+  padding: 0.0834rem;
+  color: $secondary-color;
+  border-radius: 50%;
+  font-weight: 600;
+  font-size: 0.882rem;
+}
+
+.btnActions {
+  height: 2.1rem;
+  width: 2.9rem;
+  margin-right: 0.297rem;
+}
+
+#citacao {
+  position: absolute;
+  top: 2.2rem;
+  right: 4.45rem;
+  color: $secondary-color;
+  font-weight: 500;
+  letter-spacing: 0.0320rem;
+}
+
+#actions {
+  position: absolute;
+  top: 0.325rem;
+  right: 4.45rem;
+}
+
+#details {
+  position: absolute;
+  top: 7.5rem;
+  right: 5.5rem;
+  width: 17rem;
+  font-family: $font-family-secondary;
+  font-weight: 400;
+  outline: 0.0221rem solid #725c5c36;
+  padding: 0.962rem;
+}
+
+#details h3,
+#videoSummary h3 {
+  font-size: 1.4rem;
+  font-family: $font-family-primary;
+  margin: -1rem -1rem 2rem -1rem;
+  background-color: $quartenary-color;
+  padding: 1rem;
+}
+
+#collegeDetails {
+  font-weight: 300;
+}
+
+#scrollView {
+  position: absolute;
+  top: 13rem;
+  right: 5.5rem;
+  width: 1rem;
+}
+
+main {
+  margin-left: 24.4rem;
+  position: relative;
+}
+
+main h2 {
+  color: $secondary-color;
+  width: 53rem;
+}
+
+#videoExample {
+  height: 35rem;
+  margin-top: 1rem;
+}
+
+#overlaidText-title,
+#overlaidText-name,
+#overlaidText-college {
+  color: $tertiary-color;
+  font-weight: 700;
+  letter-spacing: 0.0520rem;
+}
+
+#overlaidText-title {
+  position: absolute;
+  top: 6.5rem;
+  width: 57rem;
+  font-size: 2rem;
+  left: 3rem;
+}
+
+#overlaidText-profileIcon {
+  position: absolute;
+  top: 30rem;
+  left: 2.3rem;
+  height: 6.8rem;
+  border: 0.0827rem $secondary-color solid;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+#overlaidText-name {
+  position: absolute;
+  top: 28.5rem;
+  left: 10.7rem;
+  font-size: 2.7rem;
+}
+
+#overlaidText-college {
+  position: absolute;
+  top: 32.8rem;
+  left: 10.7rem;
+  font-size: 1.6rem;
+}
+
+#videoSummary {
+  max-height: 11.2rem;
+}
+
+#videoSummary,
+#discussions {
+  margin: 2rem 0 0 -0.0923rem;
+  font-family: $font-family-secondary;
+  width: 82.7rem;
+  font-size: 1rem;
+  outline: 0.0221rem solid #725c5c36;
+  padding: 0.962rem;
+}
+
+#videoSummary h3,
+#discussions-title {
+  font-size: 1.3rem;
+  font-family: $font-family-primary;
+}
+
+.btn-show-more {
+  position: absolute;
+  top: 53.7rem;
+  left: 66.7rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  font-family: $font-family-secondary;
+  color: $secondary-color;
+  font-weight: 600;
+}
+
+#discussions-title {
+  font-family: $font-family-primary;
+  margin: -1rem -1rem 2rem -1rem;
+  background-color: $quartenary-color;
+  width: 100%;
+  padding: 0.982rem;
+}
+
+#discussions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#discussions h4 {
+  color: $secondary-color;
+  font-size: 1.4rem;
+  font-family: $font-family-primary;
+  margin-top: 0.0872rem;
+}
+
+#discussions img {
+  height: 6rem;
+}
+
+#discussions-info {
+  width: 49rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-create-topic {
+  border: 1px transparent solid;
+  background-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
+  border-radius: 0.337rem;
+  font-size: 1.3rem;
+  color: $tertiary-color;
+  padding: 0.582rem;
+  width: 11rem;
+  height: 2.7rem;
+  margin-top: 0.753rem;
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);
+}
+
+.comments {
+  margin: 1.7rem 0 1.7rem 0.182rem;
+  outline: 0.0221rem solid #725c5c36;
+  padding: 0.998rem;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.4);
+}
+
+.comments #comments-title,
+.comments #comments-title2 {
+  font-family: $font-family-secondary;
+  font-size: 1.3rem;
+  margin-bottom: 0.337rem;
+}
+
+.comments-user {
+  margin-top: 0;
+  font-size: 0.883rem;
+}
+
+.comments p {
+  font-size: 1rem;
+  width: 76rem;
+  height: 1rem;
+  font-weight: 500;
+}
+
+.commentsDetails {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.fa-ellipsis-vertical {
+  color: $secondary-color;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+}
+
+#favCommentary,
+#favCommentary2 {
+  color: $tertiary-color;
+  background-color: $secondary-color;
+  border: none;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.5);
+  font-size: 1rem;
+  padding: 0.282rem;
+  width: 2.1rem;
+  height: 1.5rem;
+  border-radius: 0.221rem;
+  margin-right: 1rem;
+}
+
+.comments .comments-resp {
+  font-size: 0.982rem;
 }
 
 footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
+  margin: 3rem 0 0 26.4rem;
 }
 
-footer a {
-  display: flex;
-  align-items: center;
+footer img {
+  border-top: 0.0982rem #725c5c4d solid;
+  height: 12rem;
 }
 
-svg#clouds {
-  position: fixed;
-  bottom: -160px;
-  left: -230px;
-  z-index: -10;
-  width: 1920px;
-}
+@media screen and (max-width: 1280px) and (max-height: 880px) {
 
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card-container > *:not(.circle-link) ,
-  .terminal {
-    width: 100%;
+  #siteInfo {
+    margin-left: 15rem;
   }
 
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
+  #p-siteInfo-title-two,
+  #p-siteInfo-title-three {
+    line-height: 1.7;
   }
 
-  .card.highlight-card span {
-    margin-left: 72px;
+  #p-siteInfo-title-two {
+    font-size: 1.3rem;
+    font-weight: 450;
+    width: 39rem;
   }
 
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
+  #idiomas {
+    width: 6rem;
+    height: 2.3rem;
+    font-size: 0.875rem;
+    margin: 0.183rem 0.252rem;
   }
-}
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
+  #perfilInfo {
+    font-size: 0.775rem;
+    margin: 1.5rem 0 0 0.353rem;
   }
-}
 
-#required-elements {
-  h3 {
-    margin-top: 15px;
+  .userInfo-profile-welcome {
+    font-size: 0.983rem;
   }
-  h2, a {
-    font-size: 12px;
+
+  #fotoUsuario {
+    height: 2rem;
+    margin: 0 0 0.134rem 0.442rem;
+  }
+
+  #notific {
+    top: 1.4rem;
+    margin-right: 0.0100rem;
+  }
+
+  aside h1 {
+    width: 14rem;
+    height: 2.2rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  aside img {
+    margin-left: 0.0982rem;
+    height: 14.3rem;
+  }
+
+  .pageLinks {
+    font-size: 0.952rem;
+    line-height: 2rem;
+  }
+
+  .btnActions,
+  .btnActions-download {
+    font-size: 0.852rem;
+    font-weight: 500;
+  }
+
+  .btnActions-download {
+    height: 1.7rem;
+    width: 7rem;
+  }
+
+  #btnActions-doi {
+    padding: 0.0834rem;
+    font-size: 0.852rem;
+  }
+
+  .btnActions {
+    height: 1.7rem;
+    width: 2.4rem;
+  }
+
+  #citacao {
+    top: 1.5rem;
+    right: -0.643rem;
+    letter-spacing: 0.0320rem;
+    font-size: 0.835rem;
+  }
+
+  #actions {
+    top: 0.325rem;
+    right: -0.643rem;
+  }
+
+  #details {
+    top: 5.2rem;
+    right: -1rem;
+    width: 13rem;
+    padding: 0.962rem;
+    font-size: 0.695rem;
+  }
+
+  #details h3,
+  #videoSummary h3 {
+    font-size: 1.3rem;
+  }
+
+  #collegeDetails {
+    font-weight: 400;
+  }
+
+  #scrollView {
+    top: 10.4rem;
+    right: -1rem;
+    width: 0.643rem;
+  }
+
+  main {
+    margin-left: 15.2rem;
+  }
+
+  main h2 {
+    width: 45rem;
+    font-size: 1.3rem;
+  }
+
+  #videoExample {
+    height: 24rem;
+  }
+
+  #overlaidText-title {
+    top: 5.3rem;
+    width: 43rem;
+    font-size: 1.4rem;
+    left: 1.6rem;
+  }
+
+  #overlaidText-profileIcon {
+    top: 21rem;
+    left: 1.6rem;
+    height: 5rem;
+  }
+
+  #overlaidText-name {
+    top: 19.5rem;
+    left: 7.9rem;
+    font-size: 2.1rem;
+  }
+
+  #overlaidText-college {
+    top: 22.8rem;
+    left: 7.9rem;
+    font-size: 1.3rem;
+  }
+
+  #videoSummary,
+  #discussions {
+    margin: 2rem 0 0 -0.0923rem;
+    max-height: 56rem;
+    width: 56.3rem;
+    font-size: 1rem;
+    padding: 0.962rem;
+  }
+
+  #videoSummary h3,
+  #discussions-title {
+    font-size: 1.3rem;
+    font-family: $font-family-primary;
+  }
+
+  .btn-show-more {
+    position: absolute;
+    top: 45.6rem;
+    left: 10.7rem;
+    font-size: 1rem;
+  }
+
+  #discussions-title {
+    font-family: $font-family-primary;
+    margin: 1.3rem -1rem 2rem -1rem;
+  }
+
+  #discussions {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #discussions h4 {
+    font-size: 1.3rem;
+  }
+
+  .comments {
+    margin: 1.7rem 0 1.7rem 0.182rem;
+    margin-bottom: -0.152rem;
+  }
+
+  .comments #comments-title,
+  .comments #comments-title2 {
+    font-size: 1.2rem;
+  }
+
+  .comments p {
+    width: 50rem;
+  }
+
+  footer {
+    margin: 3rem 0 0 15.6rem;
+  }
+
+  footer img {
+    border-top: 0.0982rem #725c5c4d solid;
+    height: 8.7rem;
   }
 }
