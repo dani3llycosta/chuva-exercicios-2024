@@ -337,6 +337,55 @@ main h2 {
   font-weight: 500;
 }
 
+.discussionsForm {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 82.4rem;
+}
+
+.discussionsForm label {
+  font-family: $font-family-primary;
+  color: $secondary-color;
+  font-weight: 600;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+#content,
+.subject {
+  padding: 0.986rem;
+  border: 1px #725c5c5e solid;
+  border-left: 1px solid rgba(114, 92, 92, 0.219);
+  font-family: $font-family-secondary;
+  font-weight: 500;
+}
+
+#submitButton {
+  text-align: right;
+  border-bottom: 1px #725c5c5e solid;
+  border-left: 1px solid rgba(114, 92, 92, 0.219);
+
+}
+
+#submitContent {
+  border: 1px transparent solid;
+  background-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
+  font-family: $font-family-secondary;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: $tertiary-color;
+  height: 2.1rem;
+  width: 15rem;
+}
+
+.discussionsForm input,
+.discussionsForm textarea {
+  font-size: 1rem;
+  resize: none;
+}
+
 .btn-create-topic {
   border: 1px transparent solid;
   background-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
@@ -588,7 +637,6 @@ footer img {
   }
 
   .btn-show-more {
-    position: absolute;
     top: 45.6rem;
     left: 10.7rem;
     font-size: 1rem;
@@ -608,6 +656,16 @@ footer img {
 
   #discussions h4 {
     font-size: 1.3rem;
+  }
+
+  .discussionsForm {
+    width: 55.6rem;
+  }
+  
+  #content,
+  .subject {
+    padding: 0.786rem;
+    border-left: 1px solid rgba(114, 92, 92, 0.158);
   }
 
   .comments {
@@ -632,4 +690,5 @@ footer img {
     border-top: 0.0982rem #725c5c4d solid;
     height: 8.7rem;
   }
+
 }

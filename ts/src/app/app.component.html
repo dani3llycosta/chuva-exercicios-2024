@@ -146,17 +146,34 @@
         <h3>Discussões</h3>
       </div>
 
-      <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
-      <img src="../assets/img/vetores.png" alt="Icones" id="vetores">
+      <div id="discussions-info" *ngIf="displayDiscussionInfo">
+        <h4>Compartilhe suas ideias ou dúvidas com os autores!</h4>
+        <img src="../assets/img/vetores.png" alt="Icones" id="vetores">
+        <p id="discussions-text">Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade?
+          Deixe seus questionamentos ou sugestões para o autor!</p>
+      </div>
 
-      <p id="discussions-info">Sabia que o maior estímulo no desenvolvimento científico e cultural é a curiosidade?
-        Deixe seus questionamentos
-        ou sugestões para o autor!</p>
-
-      <button class="btn-create-topic">
+      <button class="btn-create-topic" type="button" value="Criar" (click)="createTopic()"
+        *ngIf="displayDiscussionInfo">
         <i class="fa-solid fa-plus"></i>
         criar tópico
       </button>
+
+      <p *ngIf="displayForm">
+        Tem uma dúvida ou sugestão? Compartilhe seu feedback com os autores!
+      </p>
+      <form *ngIf="displayForm" (submit)="submitForm()" class="discussionsForm">
+        <label for="assunto">Assunto</label>
+        <input type="text" name="assunto" [(ngModel)]="assunto"
+          placeholder='Defina um tópico sucinto para notificar os autores...' class="subject">
+
+        <label for="conteudo">Conteúdo</label>
+        <textarea id="conteudo" name="conteudo" [(ngModel)]="conteudo" id="content"></textarea>
+        <div id="submitButton">
+          <button type="submit" value="Enviar" id="submitContent">Enviar</button>
+        </div>
+
+      </form>
 
       <div class="comments">
         <h4 id="comments-title">Assunto da pergunta aparece aqui</h4>
