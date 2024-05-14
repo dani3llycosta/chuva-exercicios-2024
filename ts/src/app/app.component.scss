@@ -1,10 +1,49 @@
 @import 'variables';
 
+@import 'variables';
+
 :host {
   font-family: $font-family-primary;
   font-size: 1rem;
   color: $primary-color;
+  font-family: $font-family-primary;
+  font-size: 1rem;
+  color: $primary-color;
   box-sizing: border-box;
+}
+
+#initialInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+#siteInfo {
+  margin-left: 24rem;
+}
+
+#p-siteInfo-title-one,
+#p-siteInfo-title-two,
+#p-siteInfo-title-three {
+  margin: 0;
+  line-height: 1.3;
+}
+
+#p-siteInfo-title-one,
+#p-siteInfo-title-three {
+  font-size: 0.875rem;
+  font-weight: 450;
+}
+
+#p-siteInfo-title-two {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+#lang,
+#perfilNotific {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #initialInfo {
