@@ -16,16 +16,21 @@ export class AppComponent {
   assunto: string = '';
   conteudo: string = '';
 
+  displaySuccess = false;
+
   toggleTextExpansion() {
     this.isTextExpanded = !this.isTextExpanded;
-    this.buttonContent = this.isTextExpanded ? 'ver menos' : 'ver mais'
+    this.displaySuccess = false;
+    this.displayDiscussionInfo = true;
+
+    this.buttonContent = this.isTextExpanded ? '':'ver mais'
   }
 
   getButtonClass() {
     return {
       'expanded': this.isTextExpanded
     };
-  }
+  }  
 
   createTopic() {
     this.displayForm = true;
@@ -33,10 +38,20 @@ export class AppComponent {
   }
 
   submitForm() {
-
     this.assunto = '';
     this.conteudo = '';
     this.displayForm = false;
     this.displayDiscussionInfo = true;
+  }
+
+  successMessage() {
+    this.displaySuccess = true;
+    this.displayForm = false;
+    this.displayDiscussionInfo = false;
+  }
+
+  createNewTopic() {
+    this.displayForm = true;
+    this.displaySuccess = false;
   }
 }

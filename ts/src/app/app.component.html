@@ -129,7 +129,7 @@
     <img src="../assets/img/scroll.png" alt="exemplo de scroll" id="scrollView">
 
     <div class="answered-topic">
-      <h3>Resumo</h3>
+      <h3 id="answered-topic-h3">Resumo</h3>
       <p *ngIf="!isTextExpanded" class="ops-topic-subject">Lorem ipsum dolor sit amet, consectetur adipiscing elit
         Phasellus vitae turpis cuctor,
         mollis felis ut, commodo
@@ -200,10 +200,35 @@
         <label for="conteudo">Conteúdo</label>
         <textarea id="conteudo" name="conteudo" [(ngModel)]="conteudo" id="content"></textarea>
         <div id="submitButton">
-          <button type="submit" value="Enviar" id="submitContent">Enviar</button>
+          <button class="btn-send-topic" type="button" value="Enviar" (click)="successMessage()"
+            id="submitContent">Enviar</button>
+        </div>
+      </form>
+
+      <body *ngIf="displaySuccess" id="success">
+        <h3 id="sent-topic">Seu tópico foi enviado com sucesso! :D</h3>
+        <p>Agradecemos por sua contribuição, uma notificação será enviada ao seu email assim que seu tópico for
+          respondido!</p>
+        <a href="#" class="articles-details">Descubra outros trabalhos!</a>
+
+        <button class="btn-create-new-topic" type="button" value="Criar" (click)="createNewTopic()">
+          criar novo tópico
+        </button>
+  
+        <div class="comments-container" id="comment-container-invisible">
+          <h4 id="comments-title">Assunto da pergunta aparece aqui</h4>
+          <h5 class="comments-user">Carlos Henrique Santos</h5>
+          <p class="comments-question">Comecinho da pergunta aparece aqui resente relato inscreve-se no campo da análise
+            da dimensão e impacto de
+            processo formativo situado impacto de processo formativo processo...</p>
         </div>
 
-      </form>
+        <div id="waiting-feedback">
+          <h3><i class="fa-solid fa-check-double"></i></h3>
+          <p id="feedback">Aguardando feedback dos autores</p>
+          <a href="#" class="articles-details">Editar tópico</a>
+        </div>
+      </body>
 
       <div class="comments-container">
         <h4 id="comments-title">Assunto da pergunta aparece aqui</h4>

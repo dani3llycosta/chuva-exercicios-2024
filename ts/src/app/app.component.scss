@@ -1,7 +1,5 @@
 @import 'variables';
 
-@import 'variables';
-
 :host {
   font-family: $font-family-primary;
   font-size: 1rem;
@@ -237,7 +235,7 @@ aside img {
 }
 
 #details h3,
-.answered-topic h3 {
+.answered-topic #answered-topic-h3 {
   font-size: 1.4rem;
   font-family: $font-family-primary;
   margin: -1rem -1rem 2rem -1rem;
@@ -312,7 +310,7 @@ main h2 {
 }
 
 .answered-topic {
-  max-height: 11.2rem;
+  max-height: 30.2rem;
 }
 
 .answered-topic,
@@ -405,7 +403,6 @@ main h2 {
   text-align: right;
   border-bottom: 1px #725c5c5e solid;
   border-left: 1px solid rgba(114, 92, 92, 0.219);
-
 }
 
 #submitContent {
@@ -419,24 +416,77 @@ main h2 {
   width: 15rem;
 }
 
+#success {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items:center;
+}
+
+#sent-topic {
+  color: $secondary-color;
+  font-family: $font-family-primary;
+  font-size: 1.3rem;
+}
+
+.articles-details {
+  color: $secondary-color;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+#discussions .btn-create-new-topic {
+  margin: 1rem 0 1rem 0;
+  font-size: 1.2rem;
+  width: 15rem;
+  height: 2.5;
+  font-family: $font-family-secondary;
+  font-weight: 700;
+}
+
+#comment-container-invisible {
+  position: relative;
+  filter: blur(0.5rem);
+  text-align: left;
+}
+
+#waiting-feedback {
+  position: absolute;
+  top: 85rem;
+  left: 33rem;
+}
+
+#waiting-feedback .fa-solid, #feedback {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+#feedback {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
 .discussionsForm input,
 .discussionsForm textarea {
   font-size: 1rem;
   resize: none;
 }
 
-.btn-create-topic {
+.btn-create-topic, .btn-create-new-topic {
   border: 1px transparent solid;
   background-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
-  border-radius: 0.337rem;
   font-size: 1.3rem;
   color: $tertiary-color;
+  cursor: pointer;
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);  
+  border-radius: 0.337rem;
   padding: 0.582rem;
   width: 11rem;
   height: 2.7rem;
   margin-top: 0.753rem;
-  cursor: pointer;
-  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  text-align: center;
+  font-weight: 400;
 }
 
 .comments-container {
@@ -664,13 +714,13 @@ footer img {
   .answered-topic,
   #discussions {
     margin: 2rem 0 0 -0.0923rem;
-    max-height: 56rem;
+    max-height: 86rem;
     width: 56.3rem;
     font-size: 1rem;
     padding: 0.962rem;
   }
 
-  .answered-topic h3,
+  .answered-topic #answered-topic-h3,
   #discussions-title {
     font-size: 1.3rem;
     font-family: $font-family-primary;
@@ -680,6 +730,12 @@ footer img {
     top: 45.6rem;
     left: 10.7rem;
     font-size: 1rem;
+  }
+
+  #waiting-feedback {
+    position: absolute;
+    top: 73rem;
+    left: 20rem;
   }
 
   #discussions-title {
