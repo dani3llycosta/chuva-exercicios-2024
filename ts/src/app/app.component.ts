@@ -18,6 +18,8 @@ export class AppComponent {
 
   displaySuccess = false;
 
+  displayComments = false;
+
   toggleTextExpansion() {
     this.isTextExpanded = !this.isTextExpanded;
     this.displaySuccess = false;
@@ -53,5 +55,9 @@ export class AppComponent {
   createNewTopic() {
     this.displayForm = true;
     this.displaySuccess = false;
+  }
+
+  displayAnswers() {
+    this.displayComments = !this.displayComments;
   }
 }

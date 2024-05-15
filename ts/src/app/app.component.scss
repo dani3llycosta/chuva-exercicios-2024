@@ -420,7 +420,7 @@ main h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  align-items:center;
+  align-items: center;
 }
 
 #sent-topic {
@@ -456,7 +456,8 @@ main h2 {
   left: 33rem;
 }
 
-#waiting-feedback .fa-solid, #feedback {
+#waiting-feedback .fa-solid,
+#feedback {
   font-size: 1.8rem;
   font-weight: 900;
 }
@@ -472,13 +473,14 @@ main h2 {
   resize: none;
 }
 
-.btn-create-topic, .btn-create-new-topic {
+.btn-create-topic,
+.btn-create-new-topic {
   border: 1px transparent solid;
   background-image: linear-gradient(180deg, #FFB354 0%, #EE7A3A 100%);
   font-size: 1.3rem;
   color: $tertiary-color;
   cursor: pointer;
-  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);  
+  box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.3);
   border-radius: 0.337rem;
   padding: 0.582rem;
   width: 11rem;
@@ -503,13 +505,14 @@ main h2 {
   margin-bottom: 0.337rem;
 }
 
-.comments-user {
+.comments-user-question {
   margin-top: 0;
   font-size: 0.883rem;
 }
 
-.comments-container p {
-  margin-top: 1rem;
+.comments-container .comments-question,
+.comments-container .comments-resp {
+  margin: 1rem 0 1rem 0;
   font-size: 1rem;
   width: 76rem;
   height: 1rem;
@@ -518,7 +521,6 @@ main h2 {
 
 .comments-details {
   display: flex;
-  justify-content: center;
   text-align: left;
   align-items: center;
   margin-top: 1.7rem;
@@ -546,6 +548,62 @@ main h2 {
 
 .comments-container .comments-resp {
   font-size: 0.982rem;
+}
+
+.comments-container #answers-expanded {
+  color: $primary-color;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  margin-top: 1rem;
+  margin-left: -0.313rem;
+  font-family: $font-family-secondary;
+}
+
+.answers {
+  border-top: 1px #725c5c63 solid;
+  border-bottom: 1px #725c5c3b solid;
+  background-color: #f1e9e9;
+}
+
+#question-author {
+  background-color: $tertiary-color;
+}
+
+.comments-user {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.user-function {
+  display: flex;
+  justify-content: right;
+  text-align: right;
+  position: relative;
+}
+
+.answer-author,
+.answers .fa-check-double {
+  color: $secondary-color;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.answers .answer-author {
+  position: absolute;
+  top: -3.9rem;
+  right: 4rem;
+}
+
+.answers .fa-check-double {
+  position: absolute;
+  top: -2.6rem;
+  right: 0.676rem;
+}
+
+.comments-subject {
+  margin-top: 0;
 }
 
 footer {
@@ -714,7 +772,7 @@ footer img {
   .answered-topic,
   #discussions {
     margin: 2rem 0 0 -0.0923rem;
-    max-height: 86rem;
+    max-height: 92rem;
     width: 56.3rem;
     font-size: 1rem;
     padding: 0.962rem;
@@ -760,6 +818,7 @@ footer img {
   .comments-container {
     margin: 1.7rem 0 1.7rem 0.182rem;
     margin-bottom: -0.152rem;
+    width: 54rem;
   }
 
   .comments-container #comments-title,
@@ -767,7 +826,7 @@ footer img {
     font-size: 1.2rem;
   }
 
-  .comments-container p {
+  .comments-container .comments-question {
     width: 50rem;
   }
 
